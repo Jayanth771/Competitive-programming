@@ -1,30 +1,27 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 int main(){
-
     int n;
-    scanf("%d" , &n);
-    int a[n];
-    for( int i=0 ; i<n ; i++){
-        scanf("%d",&a[i]);
+    scanf("%d",&n);
+    int arr[n];
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
     }
-    int min=a[0];
-    int max = a[0];
-    int count1=0;
-    int count2=0;
-    for( int i=0 ; i<n ; i++){
-        if(max<a[i]){
-            max = a[i];
-            count1++;
+    int min,max;
+    int minc=0,maxc=0;
+    min=arr[0];
+    max=arr[0];
+    for(int i=0;i<n;i++){
+        if(arr[i]>max){
+            max=arr[i];
+            maxc++;
         }
-        if(min>a[i]){
-            min=a[i];
-            count2++;
+        if(arr[i]<min){
+            min=arr[i];
+            minc++;
         }
     }
-    printf("%d " , count1);
-    printf("%d" , count2);
-
-
-
-    return 0;
+    printf("%d %d",maxc,minc);
 }
